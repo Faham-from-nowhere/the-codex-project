@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Add this block to enable sourcemaps in production
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;

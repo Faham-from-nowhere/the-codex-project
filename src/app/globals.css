@@ -1,26 +1,401 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
+/* Define ALL global variables here */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Our Custom Color Palette */
+  --color-text-default: #00ff41;  /* Neon Green */
+  --color-text-warning: #ffb800;  /* Amber/Orange */
+  --color-text-danger: #ff003c;   /* Crimson Red */
+  --color-background-main: #0d0208; /* Dark Background */
+  --color-gold: #D4AF37;
+  --color-dark-metal: #1a1a1a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* Remove default browser margins */
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-default);
+  font-family: 'VT323', monospace;
+  font-size: 1.25rem;
+  
+  /* A new, larger gradient with lighter, more subtle metallic colors */
+  background: linear-gradient(135deg, 
+    #888, /* Light Gray */
+    #C0C0C0, /* Silver */
+    #E6D5A8, /* Pale Gold */
+    #C0C0C0, /* Silver */
+    #888  /* Light Gray */
+  );
+  
+  /* A much larger background size to make the movement subtle */
+  background-size: 400% 400%;
+  
+  /* Increased duration to 25s for a very slow 5-6 second phase change */
+  animation: metallic-shine 25s ease infinite;
+
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes metallic-shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-glow {
+  text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px rgba(0, 255, 65, 0.5);
+}
+
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicks to go through it */
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.25rem; /* Match font-size */
+  background-color: var(--color-text-default);
+  animation: morse-blink 6s infinite;
+}
+
+
+@keyframes morse-blink {
+  /* S (...) */
+  0%, 4%, 8% { opacity: 1; }
+  2%, 6%, 10% { opacity: 0; }
+  /* E (.) */
+  12%, 16% { opacity: 1; }
+  14%, 18% { opacity: 0; }
+  /* E (.) */
+  20%, 24% { opacity: 1; }
+  22%, 26% { opacity: 0; }
+  /* K (-.-) */
+  28%, 34% { opacity: 1; } /* Dash */
+  32%, 36% { opacity: 0; }
+  38%, 40% { opacity: 1; } /* Dot */
+  42%, 44% { opacity: 0; }
+  46%, 52% { opacity: 1; } /* Dash */
+  50%, 100% { opacity: 0; } /* Long pause */
+}
+
+.text-warning {
+  color: var(--color-text-warning);
+}
+
+.text-danger {
+  color: var(--color-text-danger);
+}
+
+/* You can create glowing versions too! */
+.text-glow-danger {
+  color: var(--color-text-danger);
+  text-shadow: 0 0 5px var(--color-text-danger);
+}
+
+.secret-hover {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--color-text-warning);
+}
+
+.secret-hover:hover::after {
+  content: attr(data-secret);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-background-main);
+  border: 1px solid var(--color-text-warning);
+  padding: 5px 10px;
+  white-space: nowrap;
+  color: var(--color-text-warning);
+  /* Add the animation */
+  animation: glitch-effect 0.25s linear infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+  25%, 75% { opacity: 0.9; }
+}
+
+.flicker {
+  animation: flicker 1.5s infinite;
+}
+
+/* QR Code Flip Animation */
+.flip-container {
+  perspective: 1000px;
+  width: 256px;
+  height: 256px;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  animation: flip 10s infinite linear;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-text-warning);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+@keyframes flip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Disco Text Animation */
+.disco-text {
+  /* Set a base color (white is good for hue-rotate) and a neon shadow */
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+
+  /* Apply the animation and set a transition for the hover effect */
+  animation: disco-text 2s linear infinite;
+  transition: all 0.5s ease-in-out;
+}
+
+/* On hover, we disable the animation and filter, making it static */
+.disco-text:hover {
+  animation: none;
+  filter: none;
+  color: var(--color-text-default); /* Revert to standard green */
+  text-shadow: 0 0 5px var(--color-text-default); /* A simpler glow */
+}
+
+/* The keyframes that create the color rotation effect */
+@keyframes disco-text {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cyber-frame {
+  position: relative;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  padding: 2rem;
+  
+  /* This is the new line */
+  background-color: rgba(13, 2, 8, 0.75); /* A semi-transparent version of your background */
+
+  border-image: linear-gradient(
+    145deg,
+    #555,
+    #ddd,
+    #888,
+    #333
+  ) 1;
+
+  clip-path: polygon(
+    20px 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%,
+    0 20px
+  );
+}
+
+.matrix-background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+/* Removed the background-color */
+z-index: 0;
+pointer-events: none; /* Ensure it doesn't block interactions */
+}
+
+/* New color classes for the metallic rain */
+.matrix-gold {
+  color: var(--color-gold);
+  text-shadow: 0 0 5px var(--color-gold);
+}
+
+.matrix-silver {
+  color: #C0C0C0; /* Silver */
+  text-shadow: 0 0 5px #C0C0C0;
+}
+
+.matrix-charcoal {
+  color: #555; /* Dark charcoal */
+  text-shadow: 0 0 5px #555;
+  opacity: 0.7;
+}
+
+/* We can remove the color from the base .matrix-column class now */
+/* In globals.css */
+
+.matrix-column {
+  position: absolute;
+  font-family: monospace;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  user-select: none;
+  /* REMOVED the opacity: 0; line from here */
+  animation: fall linear infinite;
+}
+
+/* Replace your old @keyframes fall with this new one */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0; /* Start invisible */
+  }
+  10%, 90% {
+    opacity: 1; /* Become visible for most of the animation */
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0; /* End invisible */
+  }
+}
+
+.art-deco-frame {
+  position: relative;
+  border: 2px solid var(--color-gold);
+  padding: 1rem;
+  background-color: rgba(10, 10, 10, 0.8); /* Dark, semi-transparent background */
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.art-deco-frame::before,
+.art-deco-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0.5rem; /* Creates an inner border */
+  border: 1px solid var(--color-dark-metal);
+  pointer-events: none;
+}
+
+.art-deco-frame::after {
+  inset: 0.75rem; /* Creates a second, smaller inner border */
+  border-color: var(--color-gold);
+  opacity: 0.5;
+}
+
+@keyframes text-flicker {
+  0% { opacity: 0.1; text-shadow: 0 0 5px var(--color-gold); }
+  2% { opacity: 1; text-shadow: 0 0 10px var(--color-gold); }
+  8% { opacity: 0.1; text-shadow: 0 0 5px var(--color-gold); }
+  9% { opacity: 1; text-shadow: 0 0 10px var(--color-gold); }
+  12% { opacity: 0.2; }
+  20% { opacity: 1; text-shadow: 0 0 10px var(--color-gold); }
+  80% { opacity: 1; text-shadow: 0 0 10px var(--color-gold); }
+  100% { opacity: 1; text-shadow: 0 0 10px var(--color-gold); }
+}
+
+.story-flicker {
+  animation: text-flicker 5s linear;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'VT323', monospace; /* Ensure font consistency */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.btn-gold {
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  background-color: var(--color-gold);
+  color: var(--color-dark-metal); /* Use the dark metal color for contrast */
+  box-shadow: 0 0 10px var(--color-gold);
+  outline: none;
+}
+
+.booting-background {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  z-index: 10; /* High z-index to cover everything */
+}
+
+@keyframes glitch-effect {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-frame {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: rgba(212, 175, 55, 0.2); /* Faint gold color */
+  pointer-events: none;
+}
+
+.binary-flash {
+  opacity: 0;
+  animation: binary-flash 7s infinite steps(1, end);
+}
+
+@keyframes binary-flash {
+  50% { opacity: 1; }
+  51% { opacity: 0; }
+}
+
+.dropped-letter {
+  opacity: 0.1; /* Makes the letter very faint */
 }
