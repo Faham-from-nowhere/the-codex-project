@@ -10,7 +10,7 @@ import { useGame } from '@/context/GameContext';
 
 export default function HomePage() {
   // Get unlockedFragments and setView from the context
-  const { view, setView, unlockedFragments } = useGame();
+  const { view} = useGame();
 
   
 
