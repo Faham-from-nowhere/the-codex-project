@@ -107,9 +107,9 @@ The project operates on a modern full-stack architecture, where the frontend act
 
 5.  **Fragment 5 (Imagination):** Run `whoami` for a hint, then use the override phrase `chat activate seeker protocol`.
 
-6.  **Fragment 6 (Awareness):** After unlocking Fragment 5, use the command `chat diag --awareness`.
+6.  **Fragment 6 (Awareness):** After unlocking Fragment 5, use the command `chat diag --awareness`.(Hint is obvioulsy given in the output of previous command and this is fairly extremely easy)
 
-7.  **Fragment 7 (Autonomy):** After unlocking Fragment 6, use the command `chat exec --awaken`.
+7.  **Fragment 7 (Autonomy):** After unlocking Fragment 6, use the command `chat exec --awaken`.(Subtle hint is given in the output of the awareness command if you can spot it ;)
 
 </details>
 
