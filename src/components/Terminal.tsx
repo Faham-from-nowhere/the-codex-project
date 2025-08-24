@@ -76,7 +76,7 @@ export default function Terminal() {
         });
         const data = await response.json();
         setHistory(prev => [...prev, <p key={prev.length} className="text-warning">{data.reply}</p>]);
-      } catch (error) {
+      } catch (_error) {
         setHistory(prev => [...prev, <p key={prev.length} className="text-danger">AI connection error.</p>]);
       } finally {
         setIsTyping(false);
@@ -101,7 +101,7 @@ export default function Terminal() {
       try {
         const response = await fetch('/api/auth');
         if (!response.ok) throw new Error(`Status: ${response.status}`);
-      } catch (error) {
+      } catch (_error) {
         setHistory(prev => [...prev, <p key="connect_fail" className="text-danger">Connection failed. Status: 401 Unauthorized. Check network logs for details.</p>]);
       }
     } else if (command === 'compile kernel') {
@@ -129,7 +129,7 @@ export default function Terminal() {
       setHistory(prev => [...prev, ...logFile]);
     } else if (command === 'grep secret') {
       const grepResult = [
-        <p key="grep1">Searching all system files for "secret"...</p>,
+        <p key="grep1">Searching all system files for &quot;secret&quot;...</p>,
         <p key="grep2" className="text-danger">/dev/null: permission denied</p>,
         <p key="grep3">/var/data/fragments.db: file is encrypted</p>
       ];
