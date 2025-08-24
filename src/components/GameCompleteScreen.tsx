@@ -15,7 +15,7 @@ const badge = `
 `;
 
 export default function GameCompleteScreen() {
-  const { setView } = useGame();
+  //const { setView } = useGame();
 
   return (
     <div className="flex items-center justify-center min-h-screen">
