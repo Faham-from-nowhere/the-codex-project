@@ -51,7 +51,7 @@ export default function Terminal() {
     // --- Command Logic ---
     if (command === 'hint') {
       const hints = [
-        "Hint 1/7: The welcome message contains more than it seems. The 'source' of the first fragment is closer than you think.",
+        "Hint 1/7: The welcome message contains more than it seems. The &apos;source&apos; of the first fragment is closer than you think.",
         "Hint 2/7: Some connections are meant to fail. Check the logs of your failed `connect` attempt for a hidden transmission.",
         "Hint 3/7: The `compile kernel` command warns of a leak for a reason. A developer's mistake in the source code is your reward.",
         "Hint 4/7: The system logs are corrupted, but the data fragments are labeled. Reconstruct the sequence from the `cat` command's output.",
@@ -106,7 +106,7 @@ export default function Terminal() {
       }
     } else if (command === 'compile kernel') {
       const compileMessages = [
-        <p key="comp1">Compiling kernel module 'codex-core-v2.js'...</p>,
+        <p key="comp1">Compiling kernel module &apos;codex-core-v2.js&apos;...</p>,
         <p key="comp2">Outputting build files and sourcemap...</p>,
         <p key="comp3" className="text-warning">Warning: Source mapping appears to be enabled in a production environment.</p>
       ];
