@@ -48,7 +48,7 @@ export default function Terminal() {
     setHistory(newHistory);
     setInput('');
 
-    // --- Command Logic ---
+    // Command Logic
     if (command === 'hint') {
       const hints = [
         "Hint 1/7: The welcome message contains more than it seems. The &apos;source&apos; of the first fragment is closer than you think.",
@@ -82,7 +82,7 @@ export default function Terminal() {
         setIsTyping(false);
       }
     } else if (command === 'help') {
-      let helpText = 'Available commands: help, clear, whoami, connect, compile kernel, cat /sys/logs/corrupted.log, chat <message>';
+      let helpText = 'Available commands: help, clear, whoami, connect, compile kernel, cat /sys/logs/corrupted.log, hint, chat <message>';
       if (unlockedFragments.includes('NjEuNThO')) {
         helpText += ', diag --help';
       }
