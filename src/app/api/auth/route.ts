@@ -1,7 +1,7 @@
 // src/app/api/auth/route.ts
 import { NextResponse } from 'next/server';
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
   // This is the corrected secret fragment, which now matches your GameContext
   const secretFragment = 'FRAG_2: LTc3LjcMVw=='; // Correctly decodes to -77.71W
 
