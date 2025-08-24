@@ -399,3 +399,7 @@ pointer-events: none; /* Ensure it doesn't block interactions */
 .dropped-letter {
   opacity: 0.1; /* Makes the letter very faint */
 }
+
+.terminal-glow {
+text-shadow: 0 0 5px rgba(120, 165, 120, 0.8), 0 0 10px rgba(173, 216, 230, 0.6), 0 0 20px rgba(173, 216, 230, 0.4); /* Soft blue glow */
+}
