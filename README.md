@@ -92,21 +92,26 @@ The project operates on a modern full-stack architecture, where the frontend act
 
 ---
 
-## 🔐 The ARG Walkthrough (Spoiler Alert!)
+### 🔐 The ARG Walkthrough (Spoiler Alert!)
 
->! **Fragment 1 (Vision):** Hover over the underlined word "source" in the welcome text.
->!
->! **Fragment 2 (Memory):** Run `connect`. Inspect the failed `/api/auth` request in the Network tab of your developer tools. The key is in the `x-codex-fragment` response header.
->!
->! **Fragment 3 (Pattern Recognition):** Run `compile kernel`. Inspect the `Terminal.tsx` source code in the Sources tab of your developer tools to find the `HIDDEN_KERNEL_FRAGMENT` constant.
->!
->! **Fragment 4 (Sequential Recall):** Run `cat /sys/logs/corrupted.log`. Reassemble the key from the log entries marked `[PART_1]`, `[PART_2]`, and `[PART_3]`.
->!
->! **Fragment 5 (Imagination):** Run `whoami` for a hint, then use the override phrase `chat activate seeker protocol`.
->!
->! **Fragment 6 (Awareness):** After unlocking Fragment 5, use `chat diag --awareness`.
->!
->! **Fragment 7 (Autonomy):** After unlocking Fragment 6, use `chat exec --awaken`.
+<details>
+<summary>Click here to reveal the solutions for all 7 fragments.</summary>
+
+1.  **Fragment 1 (Vision):** Hover your mouse over the underlined word `source` in the welcome text.
+
+2.  **Fragment 2 (Memory):** Run the `connect` command. Open your browser's Network tab, inspect the failed `/api/auth` request, and find the key in the `x-codex-fragment` response header.
+
+3.  **Fragment 3 (Pattern Recognition):** Run the `compile kernel` command. Open the Sources tab in your developer tools and inspect the `Terminal.tsx` source code to find the `HIDDEN_KERNEL_FRAGMENT` constant.
+
+4.  **Fragment 4 (Sequential Recall):** Run the `cat /sys/logs/corrupted.log` command. Reassemble the key from the log entries marked `[PART_1]`, `[PART_2]`, and `[PART_3]`.
+
+5.  **Fragment 5 (Imagination):** Run `whoami` for a hint, then use the override phrase `chat activate seeker protocol`.
+
+6.  **Fragment 6 (Awareness):** After unlocking Fragment 5, use the command `chat diag --awareness`.
+
+7.  **Fragment 7 (Autonomy):** After unlocking Fragment 6, use the command `chat exec --awaken`.
+
+</details>
 
 ---
 
