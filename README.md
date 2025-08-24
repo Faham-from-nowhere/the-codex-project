@@ -33,7 +33,7 @@ _An interactive Alternate Reality Game (ARG) where system errors are gateways an
 
 
 
-![Project Video Demo]([https://youtu.be/LRO_QLhtC_g])
+[![Project Video Demo](https://img.youtube.com/vi/LRO_QLhtC_g/0.jpg)](https://youtu.be/LRO_QLhtC_g)
 ## 📜 Mission Brief
 
 The Codex Project is not a website; it's an **experiential ARG**. It challenges the user to adopt a hacker's mindset, turning perceived system failures—errors, glitches, and misdirections—into gateways for discovering a hidden narrative about the evolution of artificial intelligence.
