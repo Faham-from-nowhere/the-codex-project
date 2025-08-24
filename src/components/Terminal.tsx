@@ -35,7 +35,7 @@ export default function Terminal() {
   }, [history]);
 
   useEffect(() => {
-    const secretMessage = `...`; // Your ASCII art can go here
+    const secretMessage = `...`; 
     console.log(secretMessage);
   }, []);
 
@@ -155,14 +155,14 @@ export default function Terminal() {
         }}
         onClick={() => document.getElementById('terminal-input')?.focus()}
       >
-        <div ref={terminalRef} className="overflow-y-auto h-full">
-          {history.map((line, index) => (
-            <div key={index} className="whitespace-pre-wrap">{line}</div>
-          ))}
-          {isTyping && (
-            <p className="text-warning">&gt; Warden_7 is typing...<span className="cursor"></span></p>
-          )}
-        </div>
+        <div ref={terminalRef} className="overflow-y-auto h-full terminal-glow">
+{history.map((line, index) => (
+<div key={index} className="whitespace-pre-wrap">{line}</div>
+))}
+{isTyping && (
+<p className="text-warning">&gt; Warden_7 is typing...<span className="cursor"></span></p>
+)}
+</div>
         <form onSubmit={handleCommand} className="absolute bottom-4 left-8 right-8">
           <div className="flex items-center">
             <span className="text-glow">&gt;</span>
