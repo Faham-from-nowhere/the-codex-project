@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# █ The Codex Project █
 
-## Getting Started
+> An interactive retro-cyber ARG featuring a multi-layered puzzle system and a deceptive, stateful AI.
 
-First, run the development server:
+**[▶️ View the Live Demo](https://the-codex-project.vercel.app/)** ---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### A Retro-Cyber Intelligent System
+_Built on August 24, 2025, in Sri City, India._
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The Codex Project is a hybrid full-stack and AI-powered system designed to blend a sophisticated Art Deco aesthetic with retro-cyber terminal interactions. More than just a themed web application, The Codex is an experiential Alternate Reality Game (ARG) where system "errors," glitches, and misdirections are deliberate gateways to hidden knowledge. The project's core is an intelligent AI, "Warden_7," who acts as a gatekeeper to the final secrets, challenging the user to think like a hacker to unlock a progressively unfolding narrative.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🎥 Visual Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**[Watch the Full Video Walkthrough on YouTube](https://youtu.be/your-video-id)**
+---
 
-## Learn More
+### ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+* **Immersive Terminal UI**: A fully interactive terminal with an Art Deco frame and dynamic "Matrix rain" background.
+* **Multi-Layered Puzzles**: Seven hidden fragments scattered across different layers of the application, including:
+    * Interactive UI elements (hover effects).
+    * Browser developer tools (Network inspection, Source Maps).
+    * CLI Easter eggs and a corrupted log file to analyze.
+* **Advanced AI Gatekeeper**: A multi-stage, stateful AI ("Warden_7") powered by Google Gemini and LangChain, whose personality adapts to player progress.
+* **Progressive Narrative**: Each unlocked fragment reveals a part of the "Seven Locks of Intelligence" story.
+* **Built-in Hint System**: A progressive `hint` command to guide players who get stuck.
+* **Grand Finale**: A special "Codex Awakened" screen with a final story and achievement badge.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 💻 Technology Stack
 
-## Deploy on Vercel
+| Category     | Technology                                                                                                                              |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| **Frontend** | [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/) |
+| **AI** | [Google Gemini API](https://ai.google.dev/), [LangChain](https://www.langchain.com/)                                                     |
+| **Deployment**| [Vercel](https://vercel.com/)                                                                                                           |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🚀 Getting Started
+
+To run this project locally, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Faham-from-nowhere/the-codex-project.git](https://github.com/Faham-from-nowhere/the-codex-project.git)
+    cd the-codex-project
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+    * Create a new file named `.env.local` in the root of the project.
+    * Add your Google Gemini API key to this file:
+        ```
+        GOOGLE_API_KEY="your-secret-api-key"
+        ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+### 🔐 The Secret Keys (Spoiler Alert!)
+
+This section details how to find all seven fragments.
+
+>! **Fragment 1 (Vision):** Hover your mouse over the underlined word "source" in the welcome text on the main terminal screen.
+>!
+>! **Fragment 2 (Memory):** Run the `connect` command. Open the browser's Network tab in the developer tools, inspect the failed `/api/auth` request, and find the key in the `x-codex-fragment` response header.
+>!
+>! **Fragment 3 (Pattern Recognition):** Run the `compile kernel` command. Open the Sources tab in the developer tools and inspect the `Terminal.tsx` component's source code to find the `HIDDEN_KERNEL_FRAGMENT` constant.
+>!
+>! **Fragment 4 (Sequential Recall):** Run the `cat /sys/logs/corrupted.log` command. Find the three log entries marked `[PART_1]`, `[PART_2]`, and `[PART_3]` and reassemble the key in the correct order.
+>!
+>! **Fragment 5 (Imagination):** Run the `whoami` command for a hint. Then, use the override phrase `chat activate seeker protocol`. The AI will reveal the key.
+>!
+>! **Fragment 6 (Awareness):** After unlocking Fragment 5, use `chat diag --awareness` to get the next key.
+>!
+>! **Fragment 7 (Autonomy):** After unlocking Fragment 6, use `chat exec --awaken` to get the last key.
+
+---
+
+### 🗺️ Future Enhancements
+
+* **Multi-user ARG**: Allow multiple players to collaborate on solving puzzles.
+* **Persistent AI Memory**: Use a database (like Vercel KV) to let the AI remember conversations across sessions.
+* **Dynamic Secrets**: Change the secrets with each deployment to increase replayability.
+* **Blockchain Verification**: Mint the final "Codex Awakened" achievement as an NFT on a testnet.
+
+---
+
+### 👤 Author
+
+**Faham**
+* GitHub: [@Faham-from-nowhere](https://github.com/Faham-from-nowhere)
+* LinkedIn: [Your Profile](https://www.linkedin.com/in/mohammed-faham-956116318)
