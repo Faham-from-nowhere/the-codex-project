@@ -32,7 +32,7 @@ _An interactive Alternate Reality Game (ARG) where system errors are gateways an
 </div>
 
 
-See the demo video below :-
+See the demo video here :-
 [![Project Video Demo](https://img.youtube.com/vi/LRO_QLhtC_g/0.jpg)](https://youtu.be/LRO_QLhtC_g)
 ## 📜 Mission Brief
 
