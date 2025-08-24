@@ -53,10 +53,10 @@ The project's core is **Warden_7**, a stateful AI guardian whose personality and
 
 ---
 
-## 🏛️ System Architecture
+### 🏛️ System Architecture
 
 The project operates on a modern full-stack architecture, where the frontend acts as an interactive "wrapper" for the intelligent core.
-
+```
 +--------------------------+      +---------------------------+      +---------------------------+
 |      Client (Browser)    |      |    Vercel Edge Network    |      |    AI Service (Google)    |
 |                          |      |                           |      |                           |
@@ -66,7 +66,7 @@ The project operates on a modern full-stack architecture, where the frontend act
 |   - State (GameContext)  |      |   - Constructs prompt     |      |                           |
 |                          |<-----|   - Returns AI reply      |<-----|                           |
 +--------------------------+      +---------------------------+      +---------------------------+
-
+```
 
 ---
 
