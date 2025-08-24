@@ -101,4 +101,4 @@ This section details how to find all seven fragments.
 
 **Faham**
 * GitHub: [@Faham-from-nowhere](https://github.com/Faham-from-nowhere)
-* LinkedIn: [Your Profile](https://www.linkedin.com/in/mohammed-faham-956116318/)
+* LinkedIn: [Mohammed Faham](https://www.linkedin.com/in/mohammed-faham-956116318/)
