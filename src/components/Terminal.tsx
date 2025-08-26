@@ -51,6 +51,7 @@ export default function Terminal() {
     // Command Logic
     if (command === 'hint') {
       const hints = [
+        "Bonus Hint: Try to add anything(any word or any other character) to modify the original url of the website and see the ultimate hint.",
         "Hint 1/7: The welcome message contains more than it seems. The &apos;source&apos; of the first fragment is closer than you think.",
         "Hint 2/7: Some connections are meant to fail. Check the logs of your failed `connect` attempt for a hidden transmission.",
         "Hint 3/7: The `compile kernel` command warns of a leak for a reason. A developer's mistake in the source code is your reward.",
